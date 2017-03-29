@@ -38,13 +38,15 @@ public class Login extends JFrame implements ActionListener {
 	}
 
 	JButton btnSair = new JButton("Sair");
+	JButton btnCadastrar = new JButton("Cadastrar");
+	JButton btnEntrar = new JButton("Entrar");
 
 	/**
 	 * Create the frame.
 	 */
 	public Login() {
 		setTitle("Cerve...j\u00E1! Beba com modera\u00E7\u00E3o.");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\LABSI1\\Documents\\Brahma-logo.jpg"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Imagens\\Brahma-logo.jpg"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 575, 580);
 		contentPane = new JPanel();
@@ -52,7 +54,7 @@ public class Login extends JFrame implements ActionListener {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JButton btnEntrar = new JButton("Entrar");
+		
 		btnEntrar.setFont(new Font("Tahoma", Font.BOLD, 18));
 		btnEntrar.setBounds(226, 494, 131, 37);
 		btnEntrar.setOpaque(false);
@@ -67,7 +69,7 @@ public class Login extends JFrame implements ActionListener {
 		btnSair.setBounds(385, 494, 131, 37);
 		contentPane.add(btnSair);
 
-		JButton btnCadastrar = new JButton("Cadastrar");
+		
 		btnCadastrar.setOpaque(false);
 		btnCadastrar.setFont(new Font("Tahoma", Font.BOLD, 18));
 		btnCadastrar.setContentAreaFilled(false);
@@ -109,7 +111,7 @@ public class Login extends JFrame implements ActionListener {
 		textPassSenha.setColumns(10);
 
 		JLabel lblFundo = new JLabel("");
-		lblFundo.setIcon(new ImageIcon("C:\\Users\\LABSI1\\Documents\\Brahma-logo.jpg"));
+		lblFundo.setIcon(new ImageIcon("C:\\Imagens\\Brahma-logo.jpg"));
 		lblFundo.setBounds(0, 0, 559, 542);
 		contentPane.add(lblFundo);
 
@@ -125,5 +127,18 @@ public class Login extends JFrame implements ActionListener {
 			this.dispose();
 
 		}
-	}
+		if (e.getSource() == btnCadastrar){
+			Cadastro1 cadastro1 = new Cadastro1();
+			cadastro1.setVisible(true);
+			this.dispose();
+			 
+		}
+		
+		if (e.getSource() == btnEntrar){
+			//Fazer a verificação de usuario e senha em arquivo.
+			Principal principal = new Principal();
+			principal.setVisible(true);
+			this.dispose();
+			 
+		}	}
 }
