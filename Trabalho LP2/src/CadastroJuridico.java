@@ -57,6 +57,16 @@ public class CadastroJuridico extends JFrame implements ActionListener {
 			mcCPF = new MaskFormatter("##.###.###/####-##");
 		} catch (ParseException e) {
 		}
+		MaskFormatter mcCEP = null;
+		try {
+			mcCEP = new MaskFormatter("#####-###");
+		} catch (ParseException e) {
+		}
+		MaskFormatter mcFone = null;
+		try {
+			mcFone = new MaskFormatter("(##)#####-####");
+		} catch (ParseException e) {
+		}
 
 		JLabel lblLogin = new JLabel("Login:");
 		lblLogin.setFont(new Font("Tahoma", Font.BOLD, 14));
@@ -161,7 +171,7 @@ public class CadastroJuridico extends JFrame implements ActionListener {
 		lblCep.setBounds(33, 218, 62, 23);
 		contentPane.add(lblCep);
 
-		textField_4 = new JTextField();
+		textField_4 = new JFormattedTextField(mcCEP);
 		textField_4.setFont(new Font("Tahoma", Font.BOLD, 12));
 		textField_4.setForeground(Color.BLACK);
 		textField_4.setOpaque(false);
@@ -175,7 +185,7 @@ public class CadastroJuridico extends JFrame implements ActionListener {
 		lblTelefone.setBounds(222, 218, 86, 23);
 		contentPane.add(lblTelefone);
 
-		textField_5 = new JTextField();
+		textField_5 = new JFormattedTextField(mcFone);
 		textField_5.setFont(new Font("Tahoma", Font.BOLD, 12));
 		textField_5.setForeground(Color.BLACK);
 		textField_5.setOpaque(false);

@@ -38,8 +38,14 @@ public class PrincipalPJ extends JFrame implements ActionListener {
 		JMenuItem mntmEditar = new JMenuItem("Editar");
 		mnCadastro.add(mntmEditar);
 
-		JMenu mnConsulta = new JMenu("Consulta");
+		JMenu mnConsulta = new JMenu("Cadastrar Produtos");
 		menuBar.add(mnConsulta);
+		
+		JMenuItem mntmCadastrar = new JMenuItem("Cadastrar");
+		mnConsulta.add(mntmCadastrar);
+		
+		JMenuItem mntmConsultar = new JMenuItem("Consultar ");
+		mnConsulta.add(mntmConsultar);
 
 		JMenu mnSair = new JMenu("Sair");
 		menuBar.add(mnSair);
