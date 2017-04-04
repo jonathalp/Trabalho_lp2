@@ -136,8 +136,8 @@ public class Login extends JFrame implements ActionListener {
 		
 		if (e.getSource() == btnEntrar){
 			//Fazer a verificação de usuario e senha em arquivo.
-			Principal principal = new Principal();
-			principal.setVisible(true);
+			PrincipalPJ principalpf = new PrincipalPJ();
+			principalpf.setVisible(true);
 			this.dispose();
 			 
 		}	}

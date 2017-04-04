@@ -17,6 +17,7 @@ public class PrincipalPJ extends JFrame implements ActionListener {
 
 	JPanel contentPane;
 	JMenuItem mntmSair = new JMenuItem("Sair");
+	JMenuItem mntmCadastrar = new JMenuItem("Cadastrar");
 
 	public PrincipalPJ() {
 		setTitle("Cerve...j\u00E1! Beba com modera\u00E7\u00E3o.");
@@ -41,7 +42,6 @@ public class PrincipalPJ extends JFrame implements ActionListener {
 		JMenu mnConsulta = new JMenu("Cadastrar Produtos");
 		menuBar.add(mnConsulta);
 		
-		JMenuItem mntmCadastrar = new JMenuItem("Cadastrar");
 		mnConsulta.add(mntmCadastrar);
 		
 		JMenuItem mntmConsultar = new JMenuItem("Consultar ");
@@ -58,6 +58,7 @@ public class PrincipalPJ extends JFrame implements ActionListener {
 		contentPane.add(lblNewLabel);
 
 		mntmSair.addActionListener(this);
+		mntmCadastrar.addActionListener(this);
 	}
 
 	private static void addPopup(Component component, final JPopupMenu popup) {
@@ -67,6 +68,11 @@ public class PrincipalPJ extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == mntmSair) {
 			this.dispose();
+		}
+		if(e.getSource() == mntmCadastrar){
+			CadastroProdPJ cadastroprodpj = new CadastroProdPJ();
+			cadastroprodpj.setVisible(true);
+			dispose();
 		}
 
 	}
