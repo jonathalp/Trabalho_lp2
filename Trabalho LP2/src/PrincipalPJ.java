@@ -41,9 +41,9 @@ public class PrincipalPJ extends JFrame implements ActionListener {
 
 		JMenu mnConsulta = new JMenu("Cadastrar Produtos");
 		menuBar.add(mnConsulta);
-		
+
 		mnConsulta.add(mntmCadastrar);
-		
+
 		JMenuItem mntmConsultar = new JMenuItem("Consultar ");
 		mnConsulta.add(mntmConsultar);
 
@@ -69,9 +69,9 @@ public class PrincipalPJ extends JFrame implements ActionListener {
 		if (e.getSource() == mntmSair) {
 			this.dispose();
 		}
-		if(e.getSource() == mntmCadastrar){
-			CadastroProdPJ cadastroprodpj = new CadastroProdPJ();
-			cadastroprodpj.setVisible(true);
+		if (e.getSource() == mntmCadastrar) {
+			Cadastro1prod cadastro1prod = new Cadastro1prod();
+			cadastro1prod.setVisible(true);
 			dispose();
 		}
 
