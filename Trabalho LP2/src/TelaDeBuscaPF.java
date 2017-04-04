@@ -17,13 +17,21 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.ButtonGroup;
+import javax.swing.DefaultComboBoxModel;
 
 public class TelaDeBuscaPF extends JFrame implements ActionListener {
 
 	JPanel contentPane;
 	JMenuItem mntmSair = new JMenuItem("Sair");
-	private JTextField tfBusca;
-
+	JComboBox cbBusca = new JComboBox();
+	
+	
+	JRadioButton rdbtnMarca = new JRadioButton("MARCA");
+	JRadioButton rdbtnDistribuidor = new JRadioButton("DISTRIBUIDOR");
+	JRadioButton rdbtnVolume = new JRadioButton("VOLUME");
+	
 	public TelaDeBuscaPF() {
 		setTitle("Cerve...j\u00E1! Beba com modera\u00E7\u00E3o.");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Imagens\\Brahma-logo.jpg"));
@@ -58,33 +66,57 @@ public class TelaDeBuscaPF extends JFrame implements ActionListener {
 		
 		JMenuItem mntmTrocarUsuario = new JMenuItem("Trocar Usu\u00E1rio");
 		mnSair.add(mntmTrocarUsuario);
+		
+		rdbtnMarca.setBounds(10, 28, 109, 23);
+		contentPane.add(rdbtnMarca);
+				
+				
+		rdbtnDistribuidor.setBounds(10, 52, 109, 23);
+		contentPane.add(rdbtnDistribuidor);
+						
+						
+		rdbtnVolume.setBounds(10, 78, 73, 23);
+		contentPane.add(rdbtnVolume);
+		
+		ButtonGroup btOpcoesDeBusca = new ButtonGroup();
+		btOpcoesDeBusca.add(rdbtnDistribuidor);
+		btOpcoesDeBusca.add(rdbtnMarca);
+		btOpcoesDeBusca.add(rdbtnVolume);
 
 		mnSair.add(mntmSair);
 		
-		JRadioButton rdbtnNome = new JRadioButton("MARCA");
-		rdbtnNome.setBounds(10, 28, 109, 23);
-		contentPane.add(rdbtnNome);
-				
-				JRadioButton rdbtnDistribuidor = new JRadioButton("DISTRIBUIDOR");
-				rdbtnDistribuidor.setBounds(10, 52, 109, 23);
-				contentPane.add(rdbtnDistribuidor);
-						
-						JRadioButton rdbtnVolume = new JRadioButton("VOLUME");
-						rdbtnVolume.setBounds(10, 78, 73, 23);
-						contentPane.add(rdbtnVolume);
+		rdbtnMarca.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if (arg0.getSource() == rdbtnMarca) {
+					cbBusca.setModel(new DefaultComboBoxModel(new String[] {}));
+					cbBusca.setModel(new DefaultComboBoxModel(new String[] {"Bav\u00E1ria ", "Bodebrown", "Bohemia ", "Brahma ",
+							"Brahma Extra", "Caracu ", "Cerveja Adri\u00E1tica", "Crystal ", "Devassa ", "Eisenbahn",
+							"Heinrich Thielen", "Itaipava ", "Kaiser ", "Kronenbier", "Liber ", "Polar ", "Skol",
+							"Therez\u00F3polis Gold", "Waybeer", "Xingu "}));
+				}
+				if (arg0.getSource() == rdbtnVolume) {
+					cbBusca.setModel(new DefaultComboBoxModel(new String[] {}));
+					cbBusca.setModel(new DefaultComboBoxModel(new String[] {"ml", "L"}));
+				}
+				if (arg0.getSource() == rdbtnDistribuidor) {
+					cbBusca.setModel(new DefaultComboBoxModel(new String[] {}));
+					cbBusca.setModel(new DefaultComboBoxModel(new String[] {"Lista de Distribuidores"}));
+				}
+			}
+		});
+		
 										
 										JTextArea taResultado = new JTextArea();
 										taResultado.setBounds(24, 126, 503, 283);
 										contentPane.add(taResultado);
-												
-												tfBusca = new JTextField();
-												tfBusca.setBounds(105, 95, 243, 20);
-												contentPane.add(tfBusca);
-												tfBusca.setColumns(10);
 														
 														JButton btBuscar = new JButton("BUSCAR");
 														btBuscar.setBounds(358, 94, 89, 23);
 														contentPane.add(btBuscar);
+														
+														
+														cbBusca.setBounds(128, 95, 220, 20);
+														contentPane.add(cbBusca);
 												
 														JLabel lblNewLabel = new JLabel("");
 														lblNewLabel.setBounds(0, 0, 550, 532);
@@ -103,5 +135,10 @@ public class TelaDeBuscaPF extends JFrame implements ActionListener {
 			this.dispose();
 		}
 
+	}
+	
+	public static void main(String[] args) {
+		TelaDeBuscaPF novo = new TelaDeBuscaPF();
+		novo.setVisible(true);
 	}
 }
