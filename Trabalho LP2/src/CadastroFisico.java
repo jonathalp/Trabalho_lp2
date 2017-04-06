@@ -21,28 +21,28 @@ import javax.swing.JFormattedTextField;
 
 public class CadastroFisico extends JFrame implements ActionListener {
 
-	private JPanel contentPane;
-	private JTextField tfLogin;
-	private JTextField pfSenha;
-	private JLabel lblNome;
-	private JLabel lblCpf;
-	private JLabel lblEndereo;
-	private JLabel lblBairro;
-	private JLabel lblCep;
-	private JLabel lblTelefone;
-	private JTextField tfNome;
-	private JFormattedTextField tfCPF;
-	private JTextField tfNum;
-	private JTextField textField_3;
-	private JTextField tfCEP;
-	private JTextField tfFone;
-	private JLabel lblEmail;
-	private JTextField tfEmail;
-	private JLabel lblEndereo_1;
-	private JTextField tfEndereco;
-	private JButton btnSalvar;
-	private JButton btnLimpar;
-	private JButton btnSair;
+	 JPanel contentPane;
+	 JTextField tfLogin;
+	 JTextField pfSenha;
+	 JLabel lblNome;
+	 JLabel lblCpf;
+	 JLabel lblEndereo;
+	 JLabel lblBairro;
+	 JLabel lblCep;
+	 JLabel lblTelefone;
+	 JTextField tfNome;
+	 JFormattedTextField tfCPF;
+	 JTextField tfNum;
+	 JTextField textField_3;
+	 JTextField tfCEP;
+	 JTextField tfFone;
+	 JLabel lblEmail;
+	 JTextField tfEmail;
+	 JLabel lblEndereo_1;
+	 JTextField tfEndereco;
+	 JButton btnSalvar;
+	 JButton btnLimpar;
+	 JButton btnSair;
 
 
 	public CadastroFisico() {
@@ -253,6 +253,9 @@ public class CadastroFisico extends JFrame implements ActionListener {
 			Login login = new Login();
 			login.setVisible(true);
 			this.dispose();
+		}
+		if (e.getSource() == btnSalvar){
+			String g = (tfLogin.getText())+(pfSenha.getText());
 		}
 		
 	}
