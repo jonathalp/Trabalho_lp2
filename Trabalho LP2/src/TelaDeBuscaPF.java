@@ -85,25 +85,11 @@ public class TelaDeBuscaPF extends JFrame implements ActionListener {
 
 		mnSair.add(mntmSair);
 		
-		rdbtnMarca.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				if (arg0.getSource() == rdbtnMarca) {
-					cbBusca.setModel(new DefaultComboBoxModel(new String[] {}));
-					cbBusca.setModel(new DefaultComboBoxModel(new String[] {"Bav\u00E1ria ", "Bodebrown", "Bohemia ", "Brahma ",
-							"Brahma Extra", "Caracu ", "Cerveja Adri\u00E1tica", "Crystal ", "Devassa ", "Eisenbahn",
-							"Heinrich Thielen", "Itaipava ", "Kaiser ", "Kronenbier", "Liber ", "Polar ", "Skol",
-							"Therez\u00F3polis Gold", "Waybeer", "Xingu "}));
-				}
-				if (arg0.getSource() == rdbtnVolume) {
-					cbBusca.setModel(new DefaultComboBoxModel(new String[] {}));
-					cbBusca.setModel(new DefaultComboBoxModel(new String[] {"ml", "L"}));
-				}
-				if (arg0.getSource() == rdbtnDistribuidor) {
-					cbBusca.setModel(new DefaultComboBoxModel(new String[] {}));
-					cbBusca.setModel(new DefaultComboBoxModel(new String[] {"Lista de Distribuidores"}));
-				}
-			}
-		});
+		rdbtnDistribuidor.addActionListener(this);
+		rdbtnMarca.addActionListener(this);
+		rdbtnVolume.addActionListener(this);
+		
+
 		
 										
 										JTextArea taResultado = new JTextArea();
@@ -133,6 +119,21 @@ public class TelaDeBuscaPF extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == mntmSair) {
 			this.dispose();
+		}
+		if (e.getSource() == rdbtnMarca) {
+			cbBusca.setModel(new DefaultComboBoxModel(new String[] {""}));
+			cbBusca.setModel(new DefaultComboBoxModel(new String[] {"Bav\u00E1ria ", "Bodebrown", "Bohemia ", "Brahma ",
+					"Brahma Extra", "Caracu ", "Cerveja Adri\u00E1tica", "Crystal ", "Devassa ", "Eisenbahn",
+					"Heinrich Thielen", "Itaipava ", "Kaiser ", "Kronenbier", "Liber ", "Polar ", "Skol",
+					"Therez\u00F3polis Gold", "Waybeer", "Xingu "}));
+		}
+		if (e.getSource() == rdbtnVolume) {
+			cbBusca.setModel(new DefaultComboBoxModel(new String[] {""}));
+			cbBusca.setModel(new DefaultComboBoxModel(new String[] {"ml", "L"}));
+		}
+		if (e.getSource() == rdbtnDistribuidor) {
+			cbBusca.setModel(new DefaultComboBoxModel(new String[] {""}));
+			cbBusca.setModel(new DefaultComboBoxModel(new String[] {"Lista de Distribuidores"}));
 		}
 
 	}
