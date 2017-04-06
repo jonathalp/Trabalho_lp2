@@ -22,24 +22,24 @@ import javax.swing.JFormattedTextField;
 public class CadastroFisico extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
-	private JTextField textFieldLogin;
-	private JTextField textFieldSenha;
+	private JTextField tfLogin;
+	private JTextField pfSenha;
 	private JLabel lblNome;
 	private JLabel lblCpf;
 	private JLabel lblEndereo;
 	private JLabel lblBairro;
 	private JLabel lblCep;
 	private JLabel lblTelefone;
-	private JTextField textField;
-	private JFormattedTextField textField_1;
-	private JTextField textField_2;
+	private JTextField tfNome;
+	private JFormattedTextField tfCPF;
+	private JTextField tfNum;
 	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
+	private JTextField tfCEP;
+	private JTextField tfFone;
 	private JLabel lblEmail;
-	private JTextField textField_6;
+	private JTextField tfEmail;
 	private JLabel lblEndereo_1;
-	private JTextField textField_7;
+	private JTextField tfEndereco;
 	private JButton btnSalvar;
 	private JButton btnLimpar;
 	private JButton btnSair;
@@ -60,48 +60,58 @@ public class CadastroFisico extends JFrame implements ActionListener {
 			mcCPF = new MaskFormatter("###.###.###-##");
 		} catch (ParseException e) {
 		}
+		MaskFormatter mcCEP = null;
+		try {
+			mcCEP = new MaskFormatter("#####-###");
+		} catch (ParseException e) {
+		}
+		MaskFormatter mcFone = null;
+		try {
+			mcFone = new MaskFormatter("(##)#####-####");
+		} catch (ParseException e) {
+		}
 		
 		JLabel lblLogin = new JLabel("Login:");
 		lblLogin.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblLogin.setBounds(33, 11, 62, 23);
 		contentPane.add(lblLogin);
 		
-		textFieldLogin = new JTextField();
-		textFieldLogin.setFont(new Font("Tahoma", Font.BOLD, 12));
-		textFieldLogin.setForeground(Color.BLACK);
-		textFieldLogin.setBounds(85, 14, 189, 20);
-		textFieldLogin.setOpaque(false);
-		textFieldLogin.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-		contentPane.add(textFieldLogin);
-		textFieldLogin.setColumns(10);
+		tfLogin = new JTextField();
+		tfLogin.setFont(new Font("Tahoma", Font.BOLD, 12));
+		tfLogin.setForeground(Color.BLACK);
+		tfLogin.setBounds(85, 14, 189, 20);
+		tfLogin.setOpaque(false);
+		tfLogin.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		contentPane.add(tfLogin);
+		tfLogin.setColumns(10);
 		
 		JLabel lblSenha = new JLabel("Senha:");
 		lblSenha.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblSenha.setBounds(299, 11, 62, 23);
 		contentPane.add(lblSenha);
 		
-		textFieldSenha = new JPasswordField();
-		textFieldSenha.setFont(new Font("Tahoma", Font.BOLD, 12));
-		textFieldSenha.setForeground(Color.BLACK);
-		textFieldSenha.setOpaque(false);
-		textFieldSenha.setColumns(10);
-		textFieldSenha.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-		textFieldSenha.setBounds(356, 14, 101, 20);
-		contentPane.add(textFieldSenha);
+		pfSenha = new JPasswordField();
+		pfSenha.setFont(new Font("Tahoma", Font.BOLD, 12));
+		pfSenha.setForeground(Color.BLACK);
+		pfSenha.setOpaque(false);
+		pfSenha.setColumns(10);
+		pfSenha.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		pfSenha.setBounds(356, 14, 101, 20);
+		contentPane.add(pfSenha);
 		
 		lblNome = new JLabel("Nome:");
 		lblNome.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblNome.setBounds(33, 57, 62, 23);
 		contentPane.add(lblNome);
 		
-		textField = new JTextField();
-		textField.setFont(new Font("Tahoma", Font.BOLD, 12));
-		textField.setForeground(Color.BLACK);
-		textField.setOpaque(false);
-		textField.setColumns(10);
-		textField.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-		textField.setBounds(85, 58, 372, 20);
-		contentPane.add(textField);
+		tfNome = new JTextField();
+		tfNome.setFont(new Font("Tahoma", Font.BOLD, 12));
+		tfNome.setForeground(Color.BLACK);
+		tfNome.setOpaque(false);
+		tfNome.setColumns(10);
+		tfNome.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		tfNome.setBounds(85, 58, 372, 20);
+		contentPane.add(tfNome);
 		
 		lblCpf = new JLabel("CPF:");
 		lblCpf.setFont(new Font("Tahoma", Font.BOLD, 14));
@@ -109,42 +119,42 @@ public class CadastroFisico extends JFrame implements ActionListener {
 		contentPane.add(lblCpf);
 		
 		
-		textField_1 = new JFormattedTextField(mcCPF);
-		textField_1.setFont(new Font("Tahoma", Font.BOLD, 12));
-		textField_1.setForeground(Color.BLACK);
-		textField_1.setOpaque(false);
-		textField_1.setColumns(10);
-		textField_1.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-		textField_1.setBounds(85, 102, 189, 20);
-		contentPane.add(textField_1);
+		tfCPF = new JFormattedTextField(mcCPF);
+		tfCPF.setFont(new Font("Tahoma", Font.BOLD, 12));
+		tfCPF.setForeground(Color.BLACK);
+		tfCPF.setOpaque(false);
+		tfCPF.setColumns(10);
+		tfCPF.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		tfCPF.setBounds(85, 102, 189, 20);
+		contentPane.add(tfCPF);
 		
 		lblEndereo_1 = new JLabel("Endere\u00E7o:");
 		lblEndereo_1.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblEndereo_1.setBounds(33, 142, 78, 23);
 		contentPane.add(lblEndereo_1);
 		
-		textField_7 = new JTextField();
-		textField_7.setFont(new Font("Tahoma", Font.BOLD, 12));
-		textField_7.setForeground(Color.BLACK);
-		textField_7.setOpaque(false);
-		textField_7.setColumns(10);
-		textField_7.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-		textField_7.setBounds(106, 142, 351, 20);
-		contentPane.add(textField_7);
+		tfEndereco = new JTextField();
+		tfEndereco.setFont(new Font("Tahoma", Font.BOLD, 12));
+		tfEndereco.setForeground(Color.BLACK);
+		tfEndereco.setOpaque(false);
+		tfEndereco.setColumns(10);
+		tfEndereco.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		tfEndereco.setBounds(106, 142, 351, 20);
+		contentPane.add(tfEndereco);
 		
 		lblEndereo = new JLabel("Numero:");
 		lblEndereo.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblEndereo.setBounds(33, 179, 62, 23);
 		contentPane.add(lblEndereo);
 		
-		textField_2 = new JTextField();
-		textField_2.setFont(new Font("Tahoma", Font.BOLD, 12));
-		textField_2.setForeground(Color.BLACK);
-		textField_2.setOpaque(false);
-		textField_2.setColumns(10);
-		textField_2.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-		textField_2.setBounds(98, 179, 62, 20);
-		contentPane.add(textField_2);
+		tfNum = new JTextField();
+		tfNum.setFont(new Font("Tahoma", Font.BOLD, 12));
+		tfNum.setForeground(Color.BLACK);
+		tfNum.setOpaque(false);
+		tfNum.setColumns(10);
+		tfNum.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		tfNum.setBounds(98, 179, 62, 20);
+		contentPane.add(tfNum);
 		
 		lblBairro = new JLabel("Bairro:");
 		lblBairro.setFont(new Font("Tahoma", Font.BOLD, 14));
@@ -165,42 +175,42 @@ public class CadastroFisico extends JFrame implements ActionListener {
 		lblCep.setBounds(33, 218, 62, 23);
 		contentPane.add(lblCep);
 		
-		textField_4 = new JTextField();
-		textField_4.setFont(new Font("Tahoma", Font.BOLD, 12));
-		textField_4.setForeground(Color.BLACK);
-		textField_4.setOpaque(false);
-		textField_4.setColumns(10);
-		textField_4.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-		textField_4.setBounds(72, 221, 135, 20);
-		contentPane.add(textField_4);
+		tfCEP = new JFormattedTextField(mcCEP);
+		tfCEP.setFont(new Font("Tahoma", Font.BOLD, 12));
+		tfCEP.setForeground(Color.BLACK);
+		tfCEP.setOpaque(false);
+		tfCEP.setColumns(10);
+		tfCEP.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		tfCEP.setBounds(72, 221, 135, 20);
+		contentPane.add(tfCEP);
 		
 		lblTelefone = new JLabel("Telefone:");
 		lblTelefone.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblTelefone.setBounds(222, 218, 86, 23);
 		contentPane.add(lblTelefone);
 		
-		textField_5 = new JTextField();
-		textField_5.setFont(new Font("Tahoma", Font.BOLD, 12));
-		textField_5.setForeground(Color.BLACK);
-		textField_5.setOpaque(false);
-		textField_5.setColumns(10);
-		textField_5.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-		textField_5.setBounds(293, 221, 164, 20);
-		contentPane.add(textField_5);
+		tfFone = new JFormattedTextField(mcFone);
+		tfFone.setFont(new Font("Tahoma", Font.BOLD, 12));
+		tfFone.setForeground(Color.BLACK);
+		tfFone.setOpaque(false);
+		tfFone.setColumns(10);
+		tfFone.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		tfFone.setBounds(293, 221, 164, 20);
+		contentPane.add(tfFone);
 		
 		lblEmail = new JLabel("Email:");
 		lblEmail.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblEmail.setBounds(33, 259, 62, 23);
 		contentPane.add(lblEmail);
 		
-		textField_6 = new JTextField();
-		textField_6.setFont(new Font("Tahoma", Font.BOLD, 12));
-		textField_6.setForeground(Color.BLACK);
-		textField_6.setOpaque(false);
-		textField_6.setColumns(10);
-		textField_6.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-		textField_6.setBounds(82, 262, 375, 20);
-		contentPane.add(textField_6);
+		tfEmail = new JTextField();
+		tfEmail.setFont(new Font("Tahoma", Font.BOLD, 12));
+		tfEmail.setForeground(Color.BLACK);
+		tfEmail.setOpaque(false);
+		tfEmail.setColumns(10);
+		tfEmail.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		tfEmail.setBounds(82, 262, 375, 20);
+		contentPane.add(tfEmail);
 		
 		btnSalvar = new JButton("Salvar");
 		btnSalvar.setOpaque(false);

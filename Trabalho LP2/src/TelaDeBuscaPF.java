@@ -88,26 +88,22 @@ public class TelaDeBuscaPF extends JFrame implements ActionListener {
 		rdbtnDistribuidor.addActionListener(this);
 		rdbtnMarca.addActionListener(this);
 		rdbtnVolume.addActionListener(this);
-		
-
-		
 										
-										JTextArea taResultado = new JTextArea();
-										taResultado.setBounds(24, 126, 503, 283);
-										contentPane.add(taResultado);
-														
-														JButton btBuscar = new JButton("BUSCAR");
-														btBuscar.setBounds(358, 94, 89, 23);
-														contentPane.add(btBuscar);
-														
-														
-														cbBusca.setBounds(128, 95, 220, 20);
-														contentPane.add(cbBusca);
-												
-														JLabel lblNewLabel = new JLabel("");
-														lblNewLabel.setBounds(0, 0, 550, 532);
-														lblNewLabel.setIcon(new ImageIcon("C:\\Imagens\\Brahma-logo (2).jpg"));
-														contentPane.add(lblNewLabel);
+		JTextArea taResultado = new JTextArea();
+		taResultado.setBounds(24, 126, 503, 283);
+		contentPane.add(taResultado);
+
+		JButton btBuscar = new JButton("BUSCAR");
+		btBuscar.setBounds(358, 94, 89, 23);
+		contentPane.add(btBuscar);
+
+		cbBusca.setBounds(128, 95, 220, 20);
+		contentPane.add(cbBusca);
+
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setBounds(0, 0, 550, 532);
+		lblNewLabel.setIcon(new ImageIcon("C:\\Imagens\\Brahma-logo (2).jpg"));
+		contentPane.add(lblNewLabel);
 
 		mntmSair.addActionListener(this);
 	}
