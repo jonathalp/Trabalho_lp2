@@ -4,6 +4,7 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -23,8 +24,13 @@ public class Login extends JFrame implements ActionListener {
 
 	/**
 	 * Launch the application.
+	 * 
+	 * @throws IOException
 	 */
-	public static void main(String[] args) { 
+	public static void main(String[] args) throws IOException {
+		if (Pessoa.Read("c:\\diego\\teste.txt").equals(null)) {
+		}
+
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -54,7 +60,6 @@ public class Login extends JFrame implements ActionListener {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		
 		btnEntrar.setFont(new Font("Tahoma", Font.BOLD, 18));
 		btnEntrar.setBounds(226, 494, 131, 37);
 		btnEntrar.setOpaque(false);
@@ -69,7 +74,6 @@ public class Login extends JFrame implements ActionListener {
 		btnSair.setBounds(385, 494, 131, 37);
 		contentPane.add(btnSair);
 
-		
 		btnCadastrar.setOpaque(false);
 		btnCadastrar.setFont(new Font("Tahoma", Font.BOLD, 18));
 		btnCadastrar.setContentAreaFilled(false);
@@ -127,19 +131,20 @@ public class Login extends JFrame implements ActionListener {
 			this.dispose();
 
 		}
-		if (e.getSource() == btnCadastrar){
+		if (e.getSource() == btnCadastrar) {
 			Cadastro1 cadastro1 = new Cadastro1();
 			cadastro1.setVisible(true);
 			this.dispose();
-			 
+
 		}
-		
-		if (e.getSource() == btnEntrar){
-			//Fazer a verificação de usuario e senha em arquivo.
+
+		if (e.getSource() == btnEntrar) {
+			// Fazer a verificação de usuario e senha em arquivo.
 			PrincipalPJ principalpf = new PrincipalPJ();
 			principalpf.setVisible(true);
 			this.dispose();
-			 
-		}	}
+
+		}
+	}
 }
-//COMENTARIO
+// COMENTARIO

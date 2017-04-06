@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -254,19 +255,24 @@ public class CadastroFisico extends JFrame implements ActionListener {
 			pessoaf.setLogin(tfLogin.getText());
 			pessoaf.setSenha(pfSenha.getText());
 			pessoaf.setNome(tfNome.getText());
-			pessoaf.setCEF(tfCPF.getText());
+			pessoaf.setCPF(tfCPF.getName());
 			pessoaf.setEndereco(tfEndereco.getText());
 			pessoaf.setNumero(tfNum.getText());
 			pessoaf.setBairro(textField_3.getText());
 			pessoaf.setCEP(tfCEP.getText());
 			pessoaf.setTelefone(tfFone.getText());
 			pessoaf.setEmail(tfEmail.getText());
-			String caminho = ("c:\\teste.txt");
 
-			pessoaf.Write(caminho,
-					pessoaf.getLogin() + ";" + pessoaf.getSenha() + ";" + pessoaf.getNome() + ";" + pessoaf.getCPF()
-							+ ";" + pessoaf.getEndereco() + ";" + pessoaf.getNumero() + ";" + pessoaf.getBairro() + ";"
-							+ pessoaf.getCEP() + ";" + pessoaf.getTelefone() + ";" + pessoaf.getEmail() + ":" + "PF");
+			String texto = (pessoaf.getLogin() + ";" + pessoaf.getSenha() + ";" + pessoaf.getNome() + ";"
+					+ pessoaf.getCPF() + ";" + pessoaf.getEndereco() + ";" + pessoaf.getNumero() + ";"
+					+ pessoaf.getBairro() + ";" + pessoaf.getCEP() + ";" + pessoaf.getTelefone() + ";"
+					+ pessoaf.getEmail() + ":" + "PF" + "\r\n");
+
+			if (pessoaf.Write(texto)) {
+				JOptionPane.showMessageDialog(contentPane, "Arquivo salvo com sucesso!");
+			} else {
+				JOptionPane.showMessageDialog(null, "Erro ao salvar arquivo!");
+			}
 
 		}
 
