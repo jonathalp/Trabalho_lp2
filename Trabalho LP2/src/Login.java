@@ -28,9 +28,6 @@ public class Login extends JFrame implements ActionListener {
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
-		if (Pessoa.Read("c:\\diego\\teste.txt").equals(null)) {
-		}
-
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {

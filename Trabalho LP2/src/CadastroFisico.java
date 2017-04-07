@@ -262,13 +262,13 @@ public class CadastroFisico extends JFrame implements ActionListener {
 			pessoaf.setCEP(tfCEP.getText());
 			pessoaf.setTelefone(tfFone.getText());
 			pessoaf.setEmail(tfEmail.getText());
-
+			String arq = "diego.txt";
 			String texto = (pessoaf.getLogin() + ";" + pessoaf.getSenha() + ";" + pessoaf.getNome() + ";"
 					+ pessoaf.getCPF() + ";" + pessoaf.getEndereco() + ";" + pessoaf.getNumero() + ";"
 					+ pessoaf.getBairro() + ";" + pessoaf.getCEP() + ";" + pessoaf.getTelefone() + ";"
-					+ pessoaf.getEmail() + ":" + "PF" + "\r\n");
+					+ pessoaf.getEmail() + ";" + "PF");
 
-			if (pessoaf.Write(texto)) {
+			if (pessoaf.Write(arq, texto)) {
 				JOptionPane.showMessageDialog(contentPane, "Arquivo salvo com sucesso!");
 			} else {
 				JOptionPane.showMessageDialog(null, "Erro ao salvar arquivo!");
