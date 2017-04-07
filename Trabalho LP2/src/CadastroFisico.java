@@ -251,6 +251,7 @@ public class CadastroFisico extends JFrame implements ActionListener {
 			this.dispose();
 		}
 		if (e.getSource() == btnSalvar) {
+			
 			PessoaF pessoaf = new PessoaF();
 			pessoaf.setLogin(tfLogin.getText());
 			pessoaf.setSenha(pfSenha.getText());
@@ -271,7 +272,7 @@ public class CadastroFisico extends JFrame implements ActionListener {
 			if (pessoaf.Write(arq, texto)) {
 				JOptionPane.showMessageDialog(contentPane, "Arquivo salvo com sucesso!");
 			} else {
-				JOptionPane.showMessageDialog(null, "Erro ao salvar arquivo!");
+				JOptionPane.showMessageDialog(contentPane, "Erro ao salvar arquivo!");
 			}
 
 		}
